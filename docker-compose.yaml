@@ -1,0 +1,38 @@
+version: '2.0'
+
+networks:
+ basic:
+
+services:
+
+  blockchain-explorer:
+    container_name: blockchain-explorer
+    networks:
+      - basic
+    image: eluft84/blockchain-explorer
+    command:  bash -c "./wait-for-it.sh -t 120 mysql-explorer:3306 -s -- node main.js"
+    volumes:
+      - ./config.json:/blockchain-explorer/config.json
+      - ./crypto-config:/blockchain-explorer/crypto-config
+    depends_on:
+      - mysql-explorer
+    ports:
+      - 8080:8080
+ 
+  mysql-explorer:
+    container_name: mysql-explorer
+    networks:
+      - basic
+    image: mysql/mysql-server:latest
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=fabricexplorer
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pass
+    volumes:
+      - ./fabricexplorer.sql:/docker-entrypoint-initdb.d/fabricexplorer.sql
+    ports:
+      - 3306:3306
+
+

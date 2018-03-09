@@ -1,0 +1,29 @@
+{
+	"network-config": {
+		"org1": {
+			"name": "Org1",
+			"mspid": "Org1MSP",
+			"peer1": {
+				"requests": "grpc://127.0.0.1:7051",
+				"events": "grpc://127.0.0.1:7053",
+				"server-hostname": "peer0.org1.example.com"
+			},
+			"admin": {
+				"key": "crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore",
+				"cert": "crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts"
+			}
+		}
+	},
+	"host": "localhost",
+	"port": "8080",
+	"channel": "mychannel",
+	"keyValueStore": "/tmp/fabric-client-kvs",
+	"eventWaitTime": "30000",
+	"mysql": {
+		"host": "mysql-explorer",
+		"port": "3306",
+		"database": "fabricexplorer",
+		"username": "user",
+		"passwd": "pass"
+	}
+}
