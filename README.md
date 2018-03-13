@@ -2,9 +2,7 @@
 ___
 A dockerized version of Hyperledger Blockchain Explorer.
 
-![](https://github.com/eluft84/docker-hlf-explorer/blob/master/explorer_overview.gif | width=300)
-
-
+![](https://cdn.rawgit.com/eluft84/docker-hlf-explorer/master/example/explorer_overview.gif)
 
 ## About Hyperledger Blockchain Explorer
 ___
