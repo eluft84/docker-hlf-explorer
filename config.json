@@ -4,8 +4,8 @@
 			"name": "Org1",
 			"mspid": "Org1MSP",
 			"peer1": {
-				"requests": "grpc://127.0.0.1:7051",
-				"events": "grpc://127.0.0.1:7053",
+				"requests": "grpc://peer0.org1.example.com:7051",
+				"events": "grpc://peer0.org1.example.com:7053",
 				"server-hostname": "peer0.org1.example.com"
 			},
 			"admin": {
